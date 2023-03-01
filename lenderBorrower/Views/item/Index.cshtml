@@ -9,8 +9,10 @@
                 <thead>
                     <tr>
                         <th>id</th>
+                        <th>Item</th>
                         <th>Borrower</th>
-                        @*<th>Lender</th>*@
+                        <th>Lender</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -18,13 +20,16 @@
                     {
                         <tr>
                             <td width="30%">@item.Id</td>
+                            <td width="30%">@item.Item</td>
                             <td width="30%">@item.Borrower</td>
-                            @*<td>@item.Lender</td>*@
+                            <td width="30%">@item.Lender</td>
                         </tr>
                     }
                 </tbody>
             </table>
         </div>
+        <a asp-controller="item" asp-action="create" class="btn btn-primary">Create New Item</a>
+
     } 
     else
     {

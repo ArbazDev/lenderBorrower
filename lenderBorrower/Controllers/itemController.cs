@@ -17,5 +17,16 @@ namespace lenderBorrower.Controllers
             IEnumerable<item> objList = _db.items;
             return View(objList);
         }
+        public IActionResult create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult create(item obj)
+        {
+            _db.items.Add(obj);
+            _db.SaveChanges();  
+            return RedirectToAction("Index");
+        }
     }
 }
